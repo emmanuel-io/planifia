@@ -1,0 +1,14 @@
+<!-- templates/users/user_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Liste des utilisateurs{% endblock %}
+
+{% block content %}
+<ul>
+    {% for user in users %}
+        <li>{{ user.username }} - <a href="{% url 'delete_user' user.id %}">Supprimer</a></li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'create_user' %}">Créer un nouvel utilisateur</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!-- templates/users/user_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Créer un nouvel utilisateur{% endblock %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Créer</button>
+</form>
+
+<a href="{% url 'user_list' %}">Retour à la liste des utilisateurs</a>
+{% endblock %}

@@ -1,0 +1,22 @@
+<!-- templates/base.html -->
+{% load static %}  <!-- Add this line at the top -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/pico.green.css' %}">
+</head>
+<body>
+    {% include 'includes/header.html' %}
+    
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% include 'includes/footer.html' %}
+</body>
+</body>
+</html>
