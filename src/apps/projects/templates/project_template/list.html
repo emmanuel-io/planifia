@@ -1,0 +1,28 @@
+<!-- templates/project_template/list.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+  Modèles de projet
+{% endblock %}
+
+{% block content %}
+  {% if project_templates.count > 0 %}
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th></th>
+      </tr>
+
+      {% for template in project_templates.all %}
+        <tr>
+          <td>{{ template.name }}</td>
+          <td>{{ template.description }}</td>
+          <td>
+            <a href="{% url 'project_template_details' template.uuid %}"><img src="/static/admin/img/icon-viewlink.svg" alt="" width="20" height="20" /></a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+{% endblock %}

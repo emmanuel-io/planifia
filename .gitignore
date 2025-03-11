@@ -11,3 +11,7 @@ wheels/
 
 # Private files
 .ods*
+
+# SQL files
+*.sqlite3
+*.sql

@@ -1,0 +1,12 @@
+<!-- templates/task_type/details.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+  Task type list
+{% endblock %}
+
+{% block content %}
+  <h1>{{ task_type.name }}</h1>
+  <p>Description : {{ task_type.description }} heures</p>
+  <a href="{% url 'task_type_list' %}">Retour</a>
+{% endblock %}

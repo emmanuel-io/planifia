@@ -1,0 +1,13 @@
+<!-- templates/project/list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Créer un nouvel utilisateur{% endblock %}
+
+{% block content %}
+{% for project in projets %}
+    <h2>{{ project.nom }}</h2>
+    <p>{{ project.description }}</p>
+    <p>Responsable : {{ project.responsable.username }}</p>
+    <a href="{% url 'detail_projet' project.uuid %}">Voir détails</a>
+{% endfor %}
+

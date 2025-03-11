@@ -1,5 +1,5 @@
 def main():
-    print("Hello from area!")
+    print("Hello from planifia!")
 
 
 if __name__ == "__main__":

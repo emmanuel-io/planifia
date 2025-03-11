@@ -1,0 +1,12 @@
+<!-- templates/project/details.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+  Créer un nouvel utilisateur
+{% endblock %}
+
+{% block content %}
+  <h1>{{ project.name }}</h1>
+  <p>Durée par défaut : {{ project.default_duration_hours }} heures</p>
+  <a href="{% url 'list_task_types' %}">Retour</a>
+{% endblock %}

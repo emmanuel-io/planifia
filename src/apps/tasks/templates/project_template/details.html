@@ -1,0 +1,34 @@
+<!-- templates/project_template/details.html -->
+{% extends 'base.html' %}
+
+{% block title %}
+  Créer un nouvel utilisateur
+{% endblock %}
+
+{% block content %}
+  <h1>{{ template.name }}</h1>
+  <h2>Description</h2>
+  <p>{{ template.description }}</p>
+
+  {% if template.tasks.count > 0 %}
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Estimated Hours</th>
+        <th> </th>
+      </tr>
+    
+      {% for task in template.tasks.all %}
+      <tr>
+        <td>{{ task.task_type.name }}</td>
+        <td>{{ task.task_type.description }}</td>
+        <td>{{ task.estimated_hours }}</td>
+        <td><a href="{% url 'project_template_details' template.uuid %}"><img src="/static/admin/img/icon-viewlink.svg" alt="" width="20" height="20"></a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+
+  <a href="{% url 'project_template_list' %}">Retour</a>
+{% endblock %}
